@@ -9,7 +9,7 @@ $(document).ready(function(){
 	}
 
 	var trulyRandomColorPicker = function(){
-		var colorList = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'f', 'b', 'c', 'e', 'a'];
+		var colorList = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'f', 'b', 'c', 'e', 'a', 'd'];
 		var randColor = '';
 		while (randColor.length != 6){
 			randColor += colorList[Math.round(Math.random() * (colorList.length - 1))];
@@ -47,8 +47,6 @@ $(document).ready(function(){
 		$('#randomColor').css({"background-color": trulyRandomColorPicker});
 	}
 
-
-
 	$(document).on("keypress", "form", function(event) { 
     return event.keyCode != 13;
 	});
@@ -66,6 +64,8 @@ $(document).ready(function(){
 		});
 	});
 
+	createRows(16);
+	resizeDivs(16);
 
 	$("#button").on("click", function(event){
 		$('#grid').empty();
